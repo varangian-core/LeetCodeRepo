@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace LeetCodeRepo;
+
+public class ProblemContentParser
+{
+public (string[] inputContent, string[] outputContent) ExtractContent(string text) 
+{
+var inputContent = new Regex("Input:([\\s\\S]*?)Output:");
+var outputContent = new Regex("Output:([\\s\\S]*?)(?=Explanation:|Constraints:|Example|$)");
+
+var inputMatches = inputContent
